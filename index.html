@@ -1,0 +1,491 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8dcc8">
+  <title>三水 &amp; 天将明 · 一周年快乐</title>
+  <link rel="stylesheet" href="assets/styles.css">
+  <script src="assets/game.js" defer></script>
+</head>
+<body>
+  <div class="ambient-layer" aria-hidden="true">
+    <span class="ambient-heart heart-a">♥</span>
+    <span class="ambient-heart heart-b">♥</span>
+    <span class="ambient-heart heart-c">♥</span>
+    <span class="ambient-petal petal-a"></span>
+    <span class="ambient-petal petal-b"></span>
+    <span class="ambient-petal petal-c"></span>
+    <span class="ambient-petal petal-d"></span>
+  </div>
+
+  <section class="cover" id="cover" aria-labelledby="coverTitle">
+    <div class="cover-glow cover-glow-left" aria-hidden="true"></div>
+    <div class="cover-glow cover-glow-right" aria-hidden="true"></div>
+    <div class="cover-balloons" aria-hidden="true">
+      <span class="balloon balloon-one"></span>
+      <span class="balloon balloon-two"></span>
+      <span class="balloon balloon-three"></span>
+      <span class="balloon balloon-four"></span>
+    </div>
+    <div class="cover-sparkles" aria-hidden="true">
+      <span>✦</span><span>✧</span><span>✦</span><span>♡</span><span>✧</span>
+    </div>
+
+    <article class="cover-card">
+      <div class="cover-photo-stack" aria-hidden="true">
+        <div class="cover-mini-photo cover-photo-back">
+          <img src="assets/photos/photo-07.jpg" alt="">
+        </div>
+        <div class="cover-mini-photo cover-photo-front">
+          <img src="assets/photos/photo-02.jpg" alt="">
+          <span>US</span>
+        </div>
+        <span class="photo-tape"></span>
+      </div>
+
+      <p class="cover-eyebrow">OUR LITTLE HOME · ANNIVERSARY</p>
+      <div class="cover-mark" aria-hidden="true">♡</div>
+      <h1 id="coverTitle">
+        <span>三水 <i>&amp;</i> 天将明</span>
+        <strong>一周年快乐～</strong>
+      </h1>
+      <p class="cover-copy">
+        在七个藏着回忆的角落里，<br>
+        找到属于我们的温柔答案。
+      </p>
+      <button class="start-button" id="startButton" type="button">
+        <span class="start-button-heart" aria-hidden="true">♡</span>
+        <span>开始探索</span>
+        <span class="start-button-arrow" aria-hidden="true">→</span>
+      </button>
+      <p class="cover-note">建议开启声音 · 一起走进小小的家</p>
+    </article>
+
+    <p class="cover-footnote">
+      <span aria-hidden="true">✦</span>
+      今天也要和你一起虚度时光
+      <span aria-hidden="true">✦</span>
+    </p>
+  </section>
+
+  <section class="game" id="game" hidden aria-labelledby="gameTitle">
+    <header class="game-header">
+      <div class="game-brand">
+        <span class="game-brand-icon" aria-hidden="true">🔍</span>
+        <div>
+          <h1 id="gameTitle">温馨小房间</h1>
+          <p>七张照片与手写信</p>
+        </div>
+      </div>
+      <div class="game-actions">
+        <div class="progress-pill" aria-label="照片收集进度">
+          <span aria-hidden="true">📷</span>
+          <span>照片收集</span>
+          <strong id="progressText">0/7</strong>
+        </div>
+        <button class="icon-button" id="musicButton" type="button" aria-label="关闭背景音乐" aria-pressed="true">
+          <span class="music-notes" aria-hidden="true">♫</span>
+          <span class="music-label">音乐开启</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="game-layout">
+      <section class="room-card" aria-label="可探索的温馨卧室">
+        <div class="room" id="room">
+          <div class="room-wall" aria-hidden="true"></div>
+          <div class="room-floor" aria-hidden="true"></div>
+          <div class="wall-baseboard" aria-hidden="true"></div>
+          <div class="sunbeam" aria-hidden="true"></div>
+          <div class="room-dust" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i><i></i>
+          </div>
+
+          <div class="window-frame" aria-hidden="true">
+            <div class="window-outside">
+              <span class="cloud cloud-one"></span>
+              <span class="cloud cloud-two"></span>
+              <span class="window-hill window-hill-one"></span>
+              <span class="window-hill window-hill-two"></span>
+            </div>
+            <span class="window-cross-horizontal"></span>
+            <span class="window-cross-vertical"></span>
+            <span class="window-sill"></span>
+          </div>
+          <button
+            class="search-object window-sill-search"
+            id="windowSill"
+            type="button"
+            data-label="窗台角落"
+            aria-label="搜索窗台角落">
+            <span class="dried-leaf" aria-hidden="true"></span>
+          </button>
+          <div class="curtain curtain-left" aria-hidden="true"></div>
+          <div class="curtain curtain-right" aria-hidden="true"></div>
+          <div class="curtain-rod" aria-hidden="true"></div>
+
+          <button
+            class="search-object wall-painting"
+            id="painting"
+            type="button"
+            data-label="风景画背面"
+            aria-label="查看风景画背面">
+            <span class="painting-sky" aria-hidden="true"></span>
+            <span class="painting-sun" aria-hidden="true"></span>
+            <span class="painting-hill painting-hill-back" aria-hidden="true"></span>
+            <span class="painting-hill painting-hill-front" aria-hidden="true"></span>
+            <span class="painting-flower flower-one" aria-hidden="true"></span>
+            <span class="painting-flower flower-two" aria-hidden="true"></span>
+            <span class="painting-flower flower-three" aria-hidden="true"></span>
+          </button>
+
+          <div class="wall-note" aria-hidden="true">
+            <span>with love</span>
+            <i>♡</i>
+          </div>
+
+          <div class="wardrobe" aria-hidden="true">
+            <span class="wardrobe-top"></span>
+            <span class="wardrobe-foot wardrobe-foot-left"></span>
+            <span class="wardrobe-foot wardrobe-foot-right"></span>
+            <span class="wardrobe-panel panel-left"></span>
+            <span class="wardrobe-panel panel-right"></span>
+            <span class="wardrobe-knob knob-left"></span>
+            <span class="wardrobe-knob knob-right"></span>
+          </div>
+          <button
+            class="search-object wardrobe-seam"
+            id="wardrobe"
+            type="button"
+            data-label="衣柜夹层"
+            aria-label="寻找旧衣柜的夹层">
+            <span aria-hidden="true"></span>
+          </button>
+
+          <div class="bookshelf" aria-hidden="true">
+            <span class="shelf shelf-top"></span>
+            <span class="shelf shelf-middle"></span>
+            <span class="shelf shelf-bottom"></span>
+            <span class="shelf-side shelf-side-left"></span>
+            <span class="shelf-side shelf-side-right"></span>
+            <span class="book book-1"></span>
+            <span class="book book-2"></span>
+            <span class="book book-3"></span>
+            <span class="book book-4"></span>
+            <span class="book book-5"></span>
+            <span class="book book-6"></span>
+            <span class="book book-7"></span>
+            <span class="book book-8"></span>
+            <span class="book book-9"></span>
+            <span class="shelf-vase">♡</span>
+          </div>
+          <button
+            class="search-object old-book"
+            id="oldBook"
+            type="button"
+            data-label="第三层的旧书"
+            aria-label="翻看书架第三层的旧书">
+            <span aria-hidden="true"></span>
+          </button>
+
+          <div class="floor-lamp" aria-hidden="true">
+            <span class="lamp-shade"></span>
+            <span class="lamp-glow"></span>
+            <span class="lamp-pole"></span>
+            <span class="lamp-base"></span>
+          </div>
+          <button
+            class="search-object lamp-base-search"
+            id="lamp"
+            type="button"
+            data-label="落地灯底座"
+            aria-label="检查落地灯底座">
+            <span aria-hidden="true"></span>
+          </button>
+
+          <div class="nightstand" aria-hidden="true">
+            <span class="nightstand-top"></span>
+            <span class="nightstand-body"></span>
+            <span class="nightstand-drawer"></span>
+            <span class="nightstand-knob"></span>
+            <span class="nightstand-leg nightstand-leg-left"></span>
+            <span class="nightstand-leg nightstand-leg-right"></span>
+            <span class="nightstand-cup">☕</span>
+          </div>
+          <button
+            class="search-object nightstand-drawer-search"
+            id="nightstand"
+            type="button"
+            data-label="床头柜抽屉"
+            aria-label="打开床头柜抽屉">
+            <span aria-hidden="true"></span>
+          </button>
+
+          <div class="bed" aria-hidden="true">
+            <span class="bed-headboard"></span>
+            <span class="bed-mattress"></span>
+            <span class="bed-blanket"></span>
+            <span class="blanket-stripe stripe-one"></span>
+            <span class="blanket-stripe stripe-two"></span>
+            <span class="blanket-stripe stripe-three"></span>
+            <span class="bed-frame"></span>
+            <span class="bed-leg bed-leg-left"></span>
+            <span class="bed-leg bed-leg-right"></span>
+            <span class="bed-under-shadow"></span>
+          </div>
+
+          <button
+            class="search-object pillow-search"
+            id="pillow"
+            type="button"
+            data-label="枕头底下"
+            aria-label="寻找枕头底下">
+            <span class="pillow-shape" aria-hidden="true"></span>
+          </button>
+          <button
+            class="search-object mattress-gap-search"
+            id="mattressGap"
+            type="button"
+            data-label="床垫缝隙"
+            aria-label="检查小床的床垫缝隙">
+            <span class="mattress-gap-line" aria-hidden="true"></span>
+          </button>
+          <button
+            class="search-object bed-under-search"
+            id="bedUnder"
+            type="button"
+            data-label="床底"
+            aria-label="看看床底">
+            <span class="lost-sock" aria-hidden="true"></span>
+          </button>
+
+          <div class="desk" aria-hidden="true">
+            <span class="desk-top"></span>
+            <span class="desk-leg desk-leg-left"></span>
+            <span class="desk-leg desk-leg-right"></span>
+            <span class="desk-drawer-front"></span>
+            <span class="desk-drawer-handle"></span>
+            <span class="desk-pencil-cup">✎</span>
+          </div>
+          <button
+            class="search-object notebook-search"
+            id="notebook"
+            type="button"
+            data-label="书桌上的笔记本"
+            aria-label="翻开书桌上的笔记本">
+            <span class="notebook-cover" aria-hidden="true"></span>
+            <span class="notebook-band" aria-hidden="true"></span>
+          </button>
+          <button
+            class="search-object desk-drawer-search"
+            id="deskDrawer"
+            type="button"
+            data-label="书桌抽屉"
+            aria-label="打开书桌抽屉">
+            <span class="dry-pen" aria-hidden="true"></span>
+          </button>
+
+          <div class="chair" aria-hidden="true">
+            <span class="chair-back"></span>
+            <span class="chair-cushion"></span>
+            <span class="chair-seat"></span>
+            <span class="chair-leg chair-leg-left"></span>
+            <span class="chair-leg chair-leg-right"></span>
+          </div>
+          <button
+            class="search-object under-chair-search"
+            id="underChair"
+            type="button"
+            data-label="软垫椅子下面"
+            aria-label="看看软垫椅子下面">
+            <span class="hair-tie" aria-hidden="true"></span>
+          </button>
+
+          <div class="plant" aria-hidden="true">
+            <span class="plant-pot"></span>
+            <span class="plant-soil"></span>
+            <span class="vine vine-one"></span>
+            <span class="vine vine-two"></span>
+            <span class="vine vine-three"></span>
+            <span class="leaf leaf-1">●</span>
+            <span class="leaf leaf-2">●</span>
+            <span class="leaf leaf-3">●</span>
+            <span class="leaf leaf-4">●</span>
+            <span class="leaf leaf-5">●</span>
+            <span class="leaf leaf-6">●</span>
+          </div>
+          <button
+            class="search-object plant-pot-search"
+            id="plant"
+            type="button"
+            data-label="绿萝花盆"
+            aria-label="检查绿萝花盆">
+            <span aria-hidden="true"></span>
+          </button>
+
+          <div class="rug" aria-hidden="true">
+            <span class="rug-ring rug-ring-one"></span>
+            <span class="rug-ring rug-ring-two"></span>
+            <span class="rug-dots"></span>
+          </div>
+          <button
+            class="search-object under-rug-search"
+            id="rugObject"
+            type="button"
+            data-label="地毯下面"
+            aria-label="掀起地毯看看">
+            <span class="rug-corner" aria-hidden="true"></span>
+          </button>
+
+          <button class="mystery-chest" id="mysteryChest" type="button" aria-label="轻轻打开密码箱">
+            <span class="mystery-chest-glow" aria-hidden="true"></span>
+            <span class="mystery-chest-body" aria-hidden="true">
+              <span class="chest-wood-line chest-line-one"></span>
+              <span class="chest-wood-line chest-line-two"></span>
+              <span class="chest-lid">
+                <span class="chest-lid-band"></span>
+              </span>
+              <span class="chest-lock">
+                <span class="chest-keyhole">•</span>
+              </span>
+              <span class="chest-corner chest-corner-left"></span>
+              <span class="chest-corner chest-corner-right"></span>
+            </span>
+            <span class="chest-hint">点击输入密码</span>
+          </button>
+
+          <div class="room-message" id="roomMessage" role="status" aria-live="polite">
+            <span class="message-sparkle" aria-hidden="true">✦</span>
+            <span id="roomMessageText">点击房间里的物品，开始寻找第一张照片吧。</span>
+          </div>
+        </div>
+        <p class="room-help">
+          <span aria-hidden="true">☝</span>
+          鼠标移到物件上会有名字，点击即可搜寻
+        </p>
+      </section>
+
+      <aside class="side-panel" aria-label="照片墙与密码箱">
+        <section class="photo-section">
+          <div class="panel-heading">
+            <div>
+              <span class="section-kicker">OUR MEMORIES</span>
+              <h2>我们的照片墙</h2>
+            </div>
+            <span class="heart-count" id="heartCount">♡ 0</span>
+          </div>
+          <p class="panel-intro">每一张都有背面，翻开看看藏着什么。</p>
+          <div class="photo-wall" id="photoWall" aria-live="polite"></div>
+        </section>
+
+        <section class="lock-panel" id="lockPanel" aria-labelledby="lockTitle">
+          <div class="locked-content" id="lockedContent">
+            <div class="lock-icon-wrap" aria-hidden="true">
+              <span class="lock-icon">🔒</span>
+              <span class="lock-orbit"></span>
+            </div>
+            <div>
+              <span class="section-kicker">A LITTLE SECRET</span>
+              <h2 id="lockTitle">这里似乎还缺少些什么……</h2>
+              <p><span id="lockProgress">0/7</span> 照片 · 集齐后会有一个小惊喜</p>
+            </div>
+            <div class="lock-dots" id="lockDots" aria-label="密码箱解锁进度"></div>
+          </div>
+
+          <div class="password-content" id="passwordContent" hidden>
+            <div class="mini-chest" aria-hidden="true">
+              <span class="mini-chest-lid"></span>
+              <span class="mini-chest-lock">✦</span>
+            </div>
+            <div class="password-heading">
+              <span class="section-kicker">THE MOMENT WE MET</span>
+              <h2>密码箱出现了</h2>
+              <p>把照片背面的数字连起来，打开属于我们的信。</p>
+            </div>
+            <form class="password-form" id="passwordForm" novalidate>
+              <label for="passwordInput">四位数字密码</label>
+              <div class="password-row">
+                <input
+                  id="passwordInput"
+                  name="password"
+                  type="text"
+                  inputmode="numeric"
+                  maxlength="4"
+                  pattern="[0-9]{4}"
+                  placeholder="••••"
+                  autocomplete="off"
+                  aria-describedby="passwordMessage">
+                <button type="submit">打开</button>
+              </div>
+              <p class="password-message" id="passwordMessage" role="alert" aria-live="assertive"></p>
+            </form>
+          </div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="game-footer">
+      <p><span aria-hidden="true">♡</span> 这个房间不大，但每个角落都有我们的回忆。</p>
+      <button class="reset-button" id="resetButton" type="button">
+        <span aria-hidden="true">↻</span>
+        重置寻找
+      </button>
+    </footer>
+  </section>
+
+  <aside class="clue-pop" id="cluePop" hidden aria-label="新照片线索">
+    <button class="clue-close" id="clueClose" type="button" aria-label="关闭线索卡">×</button>
+    <div class="clue-thumb">
+      <img id="clueThumbImage" src="assets/photos/photo-01.jpg" alt="">
+      <span class="clue-thumb-tape" aria-hidden="true"></span>
+    </div>
+    <div class="clue-copy">
+      <span class="section-kicker" id="clueKicker">FOUND A MEMORY · 1/7</span>
+      <h2>发现一张照片</h2>
+      <p id="clueText">第一个数字是 1</p>
+      <small>已经放进右边的照片墙，点击照片可以翻转。</small>
+    </div>
+    <button class="clue-card-flip" id="clueFlip" type="button">翻到背面</button>
+  </aside>
+
+  <div class="letter-overlay" id="letterOverlay" hidden role="dialog" aria-modal="true" aria-labelledby="letterTitle">
+    <div class="letter-particles" id="letterParticles" aria-hidden="true"></div>
+    <article class="letter-paper">
+      <button class="letter-close" id="letterClose" type="button" aria-label="关闭手写信">×</button>
+      <div class="letter-topline" aria-hidden="true">
+        <span>♡</span>
+        <i></i>
+        <span>OUR FIRST YEAR</span>
+        <i></i>
+        <span>♡</span>
+      </div>
+      <p class="letter-date">写给 三水 &amp; 天将明 · 一周年</p>
+      <h2 id="letterTitle">亲爱的你：</h2>
+      <div class="letter-body">
+        <p>如果你找到了这封信，说明你真的用心翻遍了每一个角落。</p>
+        <p>这七张照片，是我们一起走过的日子——有笑、有泪、有吵、有闹。</p>
+        <p><strong>1123</strong>，是我们第一次见面的日子，也是我想永远记住的数字。</p>
+        <p>谢谢你愿意花时间寻找，愿意走进我的世界。<br>这个房间不大，但每一个角落都藏着关于你的回忆。</p>
+        <p>希望以后的每一天，都能和你一起度过。</p>
+      </div>
+      <div class="letter-signature">
+        <p>永远爱你的人</p>
+        <span class="signature-heart">♥</span>
+        <span class="red-seal" aria-hidden="true">相爱<br>一周年</span>
+      </div>
+      <p class="letter-ps">P.S. 第二年的故事，也请继续和我一起写。</p>
+      <div class="letter-actions">
+        <button id="letterReset" type="button">再找一次</button>
+        <button id="letterDone" type="button">收好这封信 ♡</button>
+      </div>
+    </article>
+  </div>
+
+  <div class="celebration-banner" id="celebrationBanner" hidden role="status" aria-live="assertive">
+    <span aria-hidden="true">✨</span>
+    所有照片集齐了！密码箱出现在房间中央！
+    <span aria-hidden="true">✨</span>
+  </div>
+</body>
+</html>
